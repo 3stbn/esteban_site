@@ -24,7 +24,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
         <h1 className="text-3xl font-bold">{post.title}</h1>
       </div>
       <div
-        className="[&>*]:mb-3 [&>*:last-child]:mb-0"
+        className="prose lg:prose-xl"
         dangerouslySetInnerHTML={{ __html: post.body.html }}
       />
     </article>
