@@ -1,6 +1,6 @@
 ---
 title: Game Shelf
-date: 2020-05-2020
+date: 2020-05-22
 excerpt: Game Shelf allows you to organize and keep track of your favorite games, categorize your video games by the progress you have made, and save games to your wishlist.
 type: Project
 ---
