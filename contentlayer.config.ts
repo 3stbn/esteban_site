@@ -6,6 +6,7 @@ export const Post = defineDocumentType(() => ({
   fields: {
     title: { type: "string", required: true },
     date: { type: "date", required: true },
+    excerpt: { type: "string", required: true },
   },
   computedFields: {
     url: {
@@ -15,4 +16,23 @@ export const Post = defineDocumentType(() => ({
   },
 }));
 
-export default makeSource({ contentDirPath: "posts", documentTypes: [Post] });
+export const Project = defineDocumentType(() => ({
+  name: "Project",
+  filePathPattern: `**/*.md`,
+  fields: {
+    title: { type: "string", required: true },
+    date: { type: "date", required: true },
+    excerpt: { type: "string", required: true },
+  },
+  computedFields: {
+    url: {
+      type: "string",
+      resolve: (project) => `/projects/${project._raw.flattenedPath}`,
+    },
+  },
+}));
+
+export default makeSource({
+  contentDirPath: "posts",
+  documentTypes: [Post, Project],
+});
